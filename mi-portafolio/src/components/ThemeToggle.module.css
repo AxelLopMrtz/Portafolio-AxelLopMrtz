@@ -1,0 +1,62 @@
+.themeToggle {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 1001;
+}
+
+.toggleBtn {
+    width: 60px;
+    height: 30px;
+    border-radius: 15px;
+    background-color: #f0f0f0;
+    border: none;
+    cursor: pointer;
+    position: relative;
+    transition: background-color 0.3s;
+    display: flex;
+    align-items: center;
+    padding: 0 5px;
+}
+
+.toggleBtn.dark {
+    background-color: #333;
+}
+
+.toggleThumb {
+    position: absolute;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    background-color: white;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    left: 3px;
+    transition: transform 0.3s;
+}
+
+.toggleBtn.dark .toggleThumb {
+    transform: translateX(30px);
+    background-color: #121212;
+}
+
+.toggleIcons {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 14px;
+}
+
+.sunIcon,
+.moonIcon {
+    opacity: 0.7;
+    transition: opacity 0.3s;
+}
+
+.toggleBtn.dark .sunIcon {
+    opacity: 0.3;
+}
+
+.toggleBtn:not(.dark) .moonIcon {
+    opacity: 0.3;
+}

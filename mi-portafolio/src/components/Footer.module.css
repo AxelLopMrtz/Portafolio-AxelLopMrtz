@@ -1,0 +1,128 @@
+.footer {
+    background-color: var(--card-background);
+    padding: 60px 0 20px;
+    color: var(--text-color);
+    box-shadow: 0 -5px 15px var(--shadow-color);
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.content {
+    flex: 1;
+    min-width: 300px;
+    margin-bottom: 30px;
+}
+
+.logo {
+    font-size: 1.8rem;
+    font-weight: 700;
+    margin-bottom: 20px;
+}
+
+.logo a {
+    color: var(--text-color);
+    text-decoration: none;
+}
+
+.highlight {
+    color: var(--primary-color);
+}
+
+.social {
+    display: flex;
+    gap: 15px;
+}
+
+.social a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    transition: all 0.3s ease;
+}
+
+.social a:hover {
+    background-color: var(--primary-color);
+    color: white;
+    transform: translateY(-3px);
+}
+
+.links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 40px;
+}
+
+.linkGroup {
+    min-width: 150px;
+    margin-bottom: 30px;
+}
+
+.linkGroup h3 {
+    font-size: 1.2rem;
+    margin-bottom: 15px;
+    position: relative;
+    padding-bottom: 10px;
+}
+
+.linkGroup h3::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 40px;
+    height: 2px;
+    background-color: var(--primary-color);
+}
+
+.linkGroup ul {
+    list-style: none;
+}
+
+.linkGroup li {
+    margin-bottom: 10px;
+}
+
+.linkGroup a {
+    color: var(--text-color);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.linkGroup a:hover {
+    color: var(--primary-color);
+}
+
+.bottom {
+    text-align: center;
+    padding-top: 30px;
+    margin-top: 30px;
+    border-top: 1px solid var(--shadow-color);
+    font-size: 0.9rem;
+}
+
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+    }
+
+    .content {
+        margin-bottom: 40px;
+    }
+
+    .links {
+        width: 100%;
+        justify-content: space-between;
+    }
+}

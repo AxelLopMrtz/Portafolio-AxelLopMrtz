@@ -1,0 +1,151 @@
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    background-color: var(--background-color);
+    padding: 15px 0;
+    transition: all 0.3s ease;
+}
+
+.scrolled {
+    box-shadow: 0 5px 15px var(--shadow-color);
+    padding: 10px 0;
+}
+
+.container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.logo {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: var(--text-color);
+    text-decoration: none;
+}
+
+.logo span {
+    color: var(--primary-color);
+}
+
+.navLinks {
+    display: flex;
+    list-style: none;
+}
+
+.navLinks li {
+    margin-left: 30px;
+}
+
+.navLinks a {
+    color: var(--text-color);
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 1rem;
+    transition: color 0.3s ease;
+    position: relative;
+}
+
+.navLinks a:hover {
+    color: var(--primary-color);
+}
+
+.navLinks a::after {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -5px;
+    left: 0;
+    background-color: var(--primary-color);
+    transition: width 0.3s ease;
+}
+
+.navLinks a:hover::after {
+    width: 100%;
+}
+
+.menuButton {
+    display: none;
+    cursor: pointer;
+}
+
+.menuIcon {
+    width: 30px;
+    height: 20px;
+    position: relative;
+}
+
+.menuIcon span {
+    display: block;
+    position: absolute;
+    height: 3px;
+    width: 100%;
+    background: var(--text-color);
+    border-radius: 3px;
+    opacity: 1;
+    left: 0;
+    transform: rotate(0deg);
+    transition: .25s ease-in-out;
+}
+
+.menuIcon span:nth-child(1) {
+    top: 0px;
+}
+
+.menuIcon span:nth-child(2) {
+    top: 8px;
+}
+
+.menuIcon span:nth-child(3) {
+    top: 16px;
+}
+
+.menuIcon.open span:nth-child(1) {
+    top: 8px;
+    transform: rotate(135deg);
+}
+
+.menuIcon.open span:nth-child(2) {
+    opacity: 0;
+    left: -60px;
+}
+
+.menuIcon.open span:nth-child(3) {
+    top: 8px;
+    transform: rotate(-135deg);
+}
+
+@media (max-width: 768px) {
+    .menuButton {
+        display: block;
+    }
+
+    .navLinks {
+        position: fixed;
+        top: 60px;
+        left: -100%;
+        width: 100%;
+        height: calc(100vh - 60px);
+        background-color: var(--background-color);
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start;
+        padding-top: 40px;
+        transition: left 0.3s ease;
+    }
+
+    .navLinks.active {
+        left: 0;
+    }
+
+    .navLinks li {
+        margin: 15px 0;
+    }
+}
