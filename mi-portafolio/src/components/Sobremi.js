@@ -13,37 +13,29 @@ export default function Sobremi() {
                     <div className={styles.imageContainer}>
                         <div className={styles.image}>
                             {/* Aquí puedes agregar tu foto */}
-                            <img src="/images/yo.jpg" alt="Mi foto personal" className={styles.profileImage} />
+                            <img src="/images/sobremi.jpg" alt="Mi foto personal" className={styles.profileImage} />
                         </div>
                     </div>
 
                     <div className={styles.info}>
                         <h3>
-                            ¡Hola! Soy <span className={styles.highlight}>Tu Nombre</span>
+                            ¡Hola! Soy <span className={styles.highlight}>Axel López</span>
                         </h3>
                         <p>
-                            Soy un desarrollador web apasionado por crear experiencias digitales atractivas y funcionales. Me
-                            especializo en el desarrollo frontend y tengo experiencia trabajando con diversas tecnologías web.
+                            Tengo 22 años y soy recién egresado de la carrera de Ingeniería en Datos e Inteligencia Organizacional.
                         </p>
                         <p>
-                            Mi objetivo es combinar diseño y funcionalidad para crear sitios web que no solo se vean bien, sino que
-                            también proporcionen una excelente experiencia de usuario. Me encanta aprender nuevas tecnologías y
-                            mantenerme actualizado con las últimas tendencias en desarrollo web.
+                            Tengo experiencia en desarrollo web, especialmente con tecnologías como React y Node.js. Además he trabajado
+                            en proyectos de análisis de datos y visualización, lo que me ha permitido combinar mis habilidades técnicas
+                            con mi pasión por resolver problemas.
                         </p>
                         <p>
-                            Cuando no estoy codificando, disfruto [tus hobbies o intereses]. Creo que mantener un equilibrio entre el
-                            trabajo y la vida personal es clave para la creatividad y la productividad.
+                            Me interesa seguir aprendiendo y creciendo en el campo del desarrollo web y el análisis de datos. Conociendo
+                            nuevas tecnologías y herramientas que me ayuden a mejorar mis habilidades y aportar valor a los proyectos en
+                            los que trabajo.
                         </p>
 
-                        <div className={styles.details}>
-                            <div className={styles.detail}>
-                                <span className={styles.label}>Nombre:</span>
-                                <span className={styles.value}>Tu Nombre Completo</span>
-                            </div>
-                            <div className={styles.detail}>
-                                <span className={styles.label}>Email:</span>
-                                <span className={styles.value}>tu@email.com</span>
-                            </div>
+                        {/* <div className={styles.details}>
                             <div className={styles.detail}>
                                 <span className={styles.label}>Ubicación:</span>
                                 <span className={styles.value}>Tu Ciudad, País</span>
@@ -52,7 +44,7 @@ export default function Sobremi() {
                                 <span className={styles.label}>Disponibilidad:</span>
                                 <span className={styles.value}>Disponible para proyectos</span>
                             </div>
-                        </div>
+                        </div> */}
 
                         <a href="/cv.pdf" download className={styles.downloadBtn}>
                             Descargar CV

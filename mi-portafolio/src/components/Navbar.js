@@ -3,9 +3,10 @@
 import { useState, useEffect } from "react"
 import Link from "next/link"
 import { usePathname } from "next/navigation"
+import ThemeToggle from "./ThemeToggle"
 import styles from "./Navbar.module.css"
 
-export default function Navbar() {
+export default function Navbar({ theme, toggleTheme }) {
     const [isScrolled, setIsScrolled] = useState(false)
     const [isMenuOpen, setIsMenuOpen] = useState(false)
     const pathname = usePathname()
@@ -35,11 +36,16 @@ export default function Navbar() {
                     <span>Axel</span>López
                 </Link>
 
-                <div className={styles.menuButton} onClick={toggleMenu}>
-                    <div className={`${styles.menuIcon} ${isMenuOpen ? styles.open : ""}`}>
-                        <span></span>
-                        <span></span>
-                        <span></span>
+                {/* Añadir ThemeToggle dentro del navbar */}
+                <div className={styles.navActions}>
+                    <ThemeToggle theme={theme} toggleTheme={toggleTheme} />
+
+                    <div className={styles.menuButton} onClick={toggleMenu}>
+                        <div className={`${styles.menuIcon} ${isMenuOpen ? styles.open : ""}`}>
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </div>
                     </div>
                 </div>
 

@@ -60,3 +60,28 @@
 .toggleBtn:not(.dark) .moonIcon {
     opacity: 0.3;
 }
+
+/* Media query para ajustar la posición en pantallas estrechas */
+@media (max-width: 768px) {
+    .themeToggle {
+        position: absolute;
+        top: 15px;
+        right: 70px;
+        /* Dejamos espacio para el botón de menú */
+    }
+
+    .toggleBtn {
+        width: 50px;
+        /* Hacemos el botón un poco más pequeño */
+        height: 26px;
+    }
+
+    .toggleThumb {
+        width: 20px;
+        height: 20px;
+    }
+
+    .toggleBtn.dark .toggleThumb {
+        transform: translateX(24px);
+    }
+}

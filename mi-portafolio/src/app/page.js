@@ -1,9 +1,6 @@
 "use client"
 
 import { useState, useEffect } from "react"
-import styles from "./page.module.css"
-
-// Importar componentes correctamente
 import Navbar from "../components/Navbar"
 import Inicio from "../components/Inicio"
 import Sobremi from "../components/Sobremi"
@@ -12,7 +9,7 @@ import Sobremi from "../components/Sobremi"
 // import Experiencia from "../components/Experiencia"
 // import Certificados from "../components/Certificados"
 import Footer from "../components/Footer"
-import ThemeToggle from "../components/ThemeToggle"
+import styles from "./page.module.css"
 
 export default function Home() {
   const [theme, setTheme] = useState("light")
@@ -35,8 +32,7 @@ export default function Home() {
 
   return (
     <main className={styles.main}>
-      <ThemeToggle theme={theme} toggleTheme={toggleTheme} />
-      <Navbar />
+      <Navbar theme={theme} toggleTheme={toggleTheme} />
       <Inicio />
       <Sobremi />
       {/* <Tecnologias />

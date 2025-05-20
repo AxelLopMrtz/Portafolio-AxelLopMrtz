@@ -1,7 +1,7 @@
 :root {
   --primary-color: #3498db;
   --secondary-color: #2ecc71;
-  --accent-color: #e74c3c;
+  --accent-color: #2d04c0;
   --text-color: #333;
   --background-color: #f9f9f9;
   --card-background: #ffffff;
@@ -12,7 +12,7 @@
 body.dark {
   --primary-color: #2980b9;
   --secondary-color: #27ae60;
-  --accent-color: #c0392b;
+  --accent-color: #2d04c0;
   --text-color: #f0f0f0;
   --background-color: #121212;
   --card-background: #1e1e1e;
@@ -43,7 +43,7 @@ a {
 }
 
 a:hover {
-  color: var(--accent-color);
+  color: var(--secondary-color);
 }
 
 section {
