@@ -26,7 +26,7 @@ export default function Hero() {
                 </div>
                 <div className={styles.imageContainer}>
                     <div className={styles.heroImage}>
-                        <div className={styles.shape} style={{ backgroundImage: "url('/images/yo.jpg')" }}></div>
+                        <div className={styles.shape} style={{ backgroundImage: "url('/images/yo2.jpg')" }}></div>
                     </div>
                 </div>
             </div>

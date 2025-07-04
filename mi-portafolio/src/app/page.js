@@ -4,7 +4,7 @@ import { useState, useEffect } from "react"
 import Navbar from "../components/Navbar"
 import Inicio from "../components/Inicio"
 import Sobremi from "../components/Sobremi"
-// import Tecnologias from "../components/Tecnologias"
+import Tecnologias from "../components/Tecnologias"
 // import Proyectos from "../components/Proyectos"
 // import Experiencia from "../components/Experiencia"
 // import Certificados from "../components/Certificados"
@@ -35,8 +35,8 @@ export default function Home() {
       <Navbar theme={theme} toggleTheme={toggleTheme} />
       <Inicio />
       <Sobremi />
-      {/* <Tecnologias />
-      <Proyectos />
+      <Tecnologias />
+      {/* <Proyectos />
       <Experiencia />
       <Certificados /> */}
       <Footer />

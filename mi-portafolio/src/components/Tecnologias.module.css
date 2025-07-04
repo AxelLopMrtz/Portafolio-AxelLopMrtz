@@ -1,0 +1,243 @@
+.technologies {
+    padding: 100px 0;
+    background-color: var(--card-background);
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.sectionHeader {
+    text-align: center;
+    margin-bottom: 80px;
+}
+
+.sectionTitle {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--text-color);
+    margin-bottom: 15px;
+}
+
+.underline {
+    height: 4px;
+    width: 70px;
+    background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+    margin: 0 auto;
+    border-radius: 2px;
+}
+
+.sectionDescription {
+    max-width: 600px;
+    margin: 20px auto 0;
+    color: var(--text-color);
+    font-size: 1.1rem;
+    opacity: 0.8;
+}
+
+.techGrid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 60px 40px;
+    justify-items: center;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.techItem {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    padding: 10px;
+}
+
+/* Sin fondos, solo efectos en el icono y texto */
+.techItem:hover {
+    transform: translateY(-8px);
+}
+
+.techIcon {
+    width: 80px;
+    height: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 12px;
+    transition: all 0.3s ease;
+}
+
+.iconSvg {
+    transition: all 0.3s ease;
+    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.1));
+}
+
+.techItem:hover .iconSvg {
+    transform: scale(1.15);
+    filter: drop-shadow(0 6px 12px rgba(0, 0, 0, 0.2));
+}
+
+.techName {
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--text-color);
+    text-align: center;
+    margin: 0;
+    transition: all 0.3s ease;
+    opacity: 0.8;
+}
+
+.techItem:hover .techName {
+    color: var(--primary-color);
+    opacity: 1;
+    transform: translateY(-2px);
+}
+
+/* Animación de entrada suave */
+.techItem {
+    animation: fadeIn 0.6s ease-out forwards;
+    opacity: 0;
+}
+
+.techItem:nth-child(1) {
+    animation-delay: 0.1s;
+}
+
+.techItem:nth-child(2) {
+    animation-delay: 0.15s;
+}
+
+.techItem:nth-child(3) {
+    animation-delay: 0.2s;
+}
+
+.techItem:nth-child(4) {
+    animation-delay: 0.25s;
+}
+
+.techItem:nth-child(5) {
+    animation-delay: 0.3s;
+}
+
+.techItem:nth-child(6) {
+    animation-delay: 0.35s;
+}
+
+.techItem:nth-child(7) {
+    animation-delay: 0.4s;
+}
+
+.techItem:nth-child(8) {
+    animation-delay: 0.45s;
+}
+
+.techItem:nth-child(9) {
+    animation-delay: 0.5s;
+}
+
+.techItem:nth-child(10) {
+    animation-delay: 0.55s;
+}
+
+.techItem:nth-child(11) {
+    animation-delay: 0.6s;
+}
+
+.techItem:nth-child(12) {
+    animation-delay: 0.65s;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Efectos para modo oscuro */
+body.dark .iconSvg {
+    filter: brightness(1.1) drop-shadow(0 2px 4px rgba(0, 0, 0, 0.2));
+}
+
+body.dark .techItem:hover .iconSvg {
+    filter: brightness(1.2) drop-shadow(0 6px 12px rgba(0, 0, 0, 0.3));
+}
+
+/* Efectos especiales para iconos en modo oscuro */
+body.dark .darkModeIcon {
+    filter: brightness(1.1) drop-shadow(0 2px 4px rgba(255, 255, 255, 0.2));
+}
+
+body.dark .techItem:hover .darkModeIcon {
+    filter: brightness(1.2) drop-shadow(0 6px 12px rgba(255, 255, 255, 0.3));
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .sectionTitle {
+        font-size: 2.2rem;
+    }
+
+    .techGrid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 50px 30px;
+        max-width: 600px;
+    }
+
+    .techIcon {
+        width: 60px;
+        height: 60px;
+    }
+
+    .iconSvg {
+        width: 50px !important;
+        height: 50px !important;
+    }
+
+    .techItem {
+        padding: 8px;
+    }
+
+    .techItem:hover {
+        transform: translateY(-5px);
+    }
+}
+
+@media (max-width: 480px) {
+    .sectionTitle {
+        font-size: 2rem;
+    }
+
+    .techGrid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 30px 15px;
+        max-width: 500px;
+    }
+
+    .techIcon {
+        width: 45px;
+        height: 45px;
+        margin-bottom: 8px;
+    }
+
+    .iconSvg {
+        width: 35px !important;
+        height: 35px !important;
+    }
+
+    .techName {
+        font-size: 0.85rem;
+    }
+
+    .techItem {
+        padding: 5px;
+    }
+}

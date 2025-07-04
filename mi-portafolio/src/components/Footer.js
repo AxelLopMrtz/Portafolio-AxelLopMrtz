@@ -84,9 +84,6 @@ export default function Footer() {
                 </div>
             </div>
 
-            {/* <div className={styles.bottom}>
-                <p>&copy; {new Date().getFullYear()} Mi Portafolio. Todos los derechos reservados.</p>
-            </div> */}
         </footer>
     )
 }
