@@ -1,6 +1,6 @@
 .about {
     padding: 100px 0;
-    background-color: var(--background-color);
+    /* background-color: var(--background-color); */
 }
 
 .container {
@@ -24,8 +24,9 @@
 .underline {
     height: 4px;
     width: 70px;
-    background-color: var(--primary-color);
+    background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
     margin: 0 auto;
+    border-radius: 2px;
 }
 
 .content {
