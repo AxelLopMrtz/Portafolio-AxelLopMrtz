@@ -5,7 +5,7 @@ import Navbar from "../components/Navbar"
 import Inicio from "../components/Inicio"
 import Sobremi from "../components/Sobremi"
 import Tecnologias from "../components/Tecnologias"
-// import Proyectos from "../components/Proyectos"
+import Proyectos from "../components/Proyectos"
 // import Experiencia from "../components/Experiencia"
 // import Certificados from "../components/Certificados"
 import Footer from "../components/Footer"
@@ -36,9 +36,9 @@ export default function Home() {
       <Inicio />
       <Sobremi />
       <Tecnologias />
-      {/* <Proyectos />
-      <Experiencia />
-      <Certificados /> */}
+      <Proyectos />
+      {/* <Experiencia /> */}
+      {/* <Certificados /> */}
       <Footer />
     </main>
   )
