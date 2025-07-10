@@ -46,7 +46,7 @@ export default function Sobremi() {
                             </div>
                         </div> */}
 
-                        <a href="/cv.pdf" download className={styles.downloadBtn}>
+                        <a href="/Docs/cv.pdf" download className={styles.downloadBtn}>
                             Descargar CV
                         </a>
                     </div>

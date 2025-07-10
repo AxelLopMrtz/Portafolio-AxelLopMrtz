@@ -1,0 +1,231 @@
+.certificates {
+    padding: 100px 0;
+    /* background-color: var(--background-color); */
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.sectionHeader {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.sectionTitle {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--text-color);
+    margin-bottom: 15px;
+}
+
+.underline {
+    height: 4px;
+    width: 70px;
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    margin: 0 auto;
+    border-radius: 2px;
+}
+
+.sectionDescription {
+    max-width: 600px;
+    margin: 20px auto 0;
+    color: var(--text-color);
+}
+
+.certificatesContainer {
+    position: relative;
+}
+
+.certificatesGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 30px;
+    margin-bottom: 30px;
+}
+
+/* Grid para los certificados de preview - SOLO MITAD VISIBLE */
+.previewGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 30px;
+    margin-bottom: 30px;
+    position: relative;
+    height: 150px;
+    /* Altura limitada para mostrar solo la mitad */
+    overflow: hidden;
+    /* Oculta la parte inferior */
+    mask: linear-gradient(to bottom, black 0%, black 70%, transparent 100%);
+    -webkit-mask: linear-gradient(to bottom, black 0%, black 70%, transparent 100%);
+}
+
+.certificateCard {
+    background-color: var(--card-background);
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px var(--shadow-color);
+    transition: all 0.3s ease;
+}
+
+.certificateCard:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px var(--shadow-color);
+}
+
+/* Estilo para las tarjetas de preview */
+.previewCard {
+    opacity: 0.5;
+    filter: blur(0.5px);
+    transform: scale(0.98);
+    pointer-events: none;
+    position: relative;
+}
+
+.previewCard::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(to bottom, transparent 0%, transparent 60%, var(--background-color) 100%);
+    opacity: 0.7;
+    z-index: 1;
+}
+
+.certificateImage {
+    height: 160px;
+    overflow: hidden;
+}
+
+.certificateImage img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.certificateCard:hover .certificateImage img {
+    transform: scale(1.05);
+}
+
+.certificateInfo {
+    padding: 20px;
+    position: relative;
+    z-index: 2;
+}
+
+.certificateTitle {
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-bottom: 10px;
+    color: var(--text-color);
+}
+
+.certificateIssuer {
+    font-size: 0.9rem;
+    color: var(--secondary-color);
+    margin-bottom: 5px;
+}
+
+.certificateDate {
+    font-size: 0.85rem;
+    color: var(--text-color);
+    opacity: 0.8;
+    margin-bottom: 15px;
+}
+
+.certificateLink {
+    display: inline-block;
+    padding: 8px 15px;
+    background-color: var(--primary-color);
+    color: white;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+}
+
+.certificateLink:hover {
+    background-color: var(--accent-color);
+    color: var(--text-color);
+}
+
+/* Botón de toggle */
+.toggleButtonContainer {
+    display: flex;
+    justify-content: center;
+    margin-top: 40px;
+}
+
+.toggleButton {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 12px 24px;
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    color: white;
+    border: none;
+    border-radius: 30px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.toggleButton:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+    background: linear-gradient(135deg, var(--secondary-color), var(--primary-color));
+}
+
+.toggleButton:active {
+    transform: translateY(0);
+}
+
+.toggleButton svg {
+    transition: transform 0.3s ease;
+}
+
+.toggleButton:hover svg {
+    transform: translateY(2px);
+}
+
+/* Adaptación para modo oscuro */
+body.dark .previewCard::after {
+    background: linear-gradient(to bottom, transparent 0%, transparent 60%, var(--background-color) 100%);
+    opacity: 0.8;
+}
+
+/* Responsivo */
+@media (max-width: 768px) {
+    .certificatesGrid {
+        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+        gap: 20px;
+    }
+
+    .previewGrid {
+        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+        gap: 20px;
+        height: 120px;
+    }
+
+    .toggleButton {
+        padding: 10px 20px;
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .certificatesGrid {
+        grid-template-columns: 1fr;
+    }
+
+    .previewGrid {
+        grid-template-columns: 1fr;
+        height: 100px;
+    }
+}

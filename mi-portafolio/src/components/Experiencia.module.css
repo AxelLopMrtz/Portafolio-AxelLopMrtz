@@ -1,0 +1,269 @@
+.experience {
+    padding: 100px 0;
+    background-color: var(--card-background);
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.sectionHeader {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.sectionTitle {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--text-color);
+    margin-bottom: 15px;
+}
+
+.underline {
+    height: 4px;
+    width: 70px;
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    margin: 0 auto;
+    border-radius: 2px;
+}
+
+.sectionDescription {
+    max-width: 600px;
+    margin: 20px auto 0;
+    color: var(--text-color);
+}
+
+.timeline {
+    position: relative;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+/* Línea central - solo visible en desktop */
+.timeline::after {
+    content: "";
+    position: absolute;
+    width: 4px;
+    background-color: var(--primary-color);
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.timelineItem {
+    padding: 10px 40px;
+    position: relative;
+    width: 50%;
+    box-sizing: border-box;
+}
+
+.left {
+    left: 0;
+}
+
+.right {
+    left: 50%;
+}
+
+.timelineContent {
+    padding: 25px;
+    background-color: var(--background-color);
+    position: relative;
+    border-radius: 15px;
+    box-shadow: 0 8px 25px var(--shadow-color);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* .timelineContent:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 35px var(--shadow-color);
+} */
+
+.timelineDot {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background-color: var(--primary-color);
+    border: 4px solid var(--background-color);
+    border-radius: 50%;
+    top: 25px;
+    z-index: 2;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+}
+
+.left .timelineDot {
+    right: -50px;
+}
+
+.right .timelineDot {
+    left: -50px;
+}
+
+.period {
+    display: inline-block;
+    padding: 8px 16px;
+    background-color: var(--primary-color);
+    color: white;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    margin-bottom: 15px;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+}
+
+.position {
+    font-size: 1.4rem;
+    font-weight: 700;
+    margin-bottom: 8px;
+    color: var(--text-color);
+    line-height: 1.3;
+}
+
+.company {
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-bottom: 15px;
+    color: var(--secondary-color);
+}
+
+.description {
+    margin-bottom: 20px;
+    line-height: 1.6;
+    color: var(--text-color);
+    font-size: 1rem;
+}
+
+.achievements {
+    padding-left: 20px;
+    margin: 0;
+}
+
+.achievements li {
+    margin-bottom: 8px;
+    color: var(--text-color);
+    line-height: 1.5;
+    position: relative;
+}
+
+.achievements li::marker {
+    color: var(--primary-color);
+}
+
+@media (max-width: 768px) {
+    .sectionTitle {
+        font-size: 2.2rem;
+    }
+
+    .sectionDescription {
+        font-size: 0.95rem;
+        padding: 0 10px;
+    }
+
+    /* Línea vertical a la izquierda en móvil */
+    .timeline::after {
+        left: 25px;
+        transform: none;
+    }
+
+    /* Todos los elementos a la derecha de la línea */
+    .timelineItem {
+        width: 100%;
+        padding-left: 60px;
+        padding-right: 20px;
+        left: 0 !important;
+        /* Forzar posición */
+    }
+
+    .right {
+        left: 0;
+        /* Resetear posición del lado derecho */
+    }
+
+    /* Reposicionar los dots */
+    .left .timelineDot,
+    .right .timelineDot {
+        left: 15px;
+        /* Posición fija a la izquierda */
+        right: auto;
+    }
+
+    /* Ajustar contenido */
+    .timelineContent {
+        padding: 20px;
+        margin-bottom: 30px;
+    }
+
+    .position {
+        font-size: 1.2rem;
+    }
+
+    .company {
+        font-size: 1rem;
+    }
+
+    .description {
+        font-size: 0.95rem;
+    }
+
+    .period {
+        font-size: 0.8rem;
+        padding: 6px 12px;
+    }
+
+    .achievements {
+        padding-left: 15px;
+    }
+
+    .achievements li {
+        font-size: 0.9rem;
+        margin-bottom: 6px;
+    }
+}
+
+/* Para pantallas muy pequeñas */
+@media (max-width: 480px) {
+    .experience {
+        padding: 80px 0;
+    }
+
+    .container {
+        padding: 0 15px;
+    }
+
+    .sectionTitle {
+        font-size: 2rem;
+    }
+
+    .timelineItem {
+        padding-left: 50px;
+        padding-right: 15px;
+    }
+
+    .timeline::after {
+        left: 20px;
+    }
+
+    .left .timelineDot,
+    .right .timelineDot {
+        left: 10px;
+        width: 16px;
+        height: 16px;
+        border-width: 3px;
+    }
+
+    .timelineContent {
+        padding: 15px;
+    }
+
+    .position {
+        font-size: 1.1rem;
+    }
+
+    .period {
+        font-size: 0.75rem;
+        padding: 5px 10px;
+    }
+}
