@@ -1,10 +1,24 @@
 "use client"
 
-import { useState } from "react"
+import { useState, useEffect } from "react"
 import styles from "./Certificados.module.css"
 
 export default function Certificados() {
     const [showAll, setShowAll] = useState(false)
+    const [isMobile, setIsMobile] = useState(false)
+
+    // Detectar si es móvil
+    useEffect(() => {
+        const checkMobile = () => {
+            setIsMobile(window.innerWidth <= 768)
+        }
+
+        checkMobile()
+        window.addEventListener("resize", checkMobile)
+
+        return () => window.removeEventListener("resize", checkMobile)
+    }, [])
+
     const certificates = [
         {
             title: "Participación en Talent Land 2025",
@@ -92,10 +106,11 @@ export default function Certificados() {
         },
     ]
 
-    // Lógica para mostrar certificados
+    // Lógica adaptativa para móvil vs desktop
     const visibleCertificates = certificates.slice(0, 3) // Primeros 3 siempre visibles
-    const previewCertificates = certificates.slice(3, 6) // Siguientes 3 como preview
-    const hiddenCertificates = certificates.slice(6) // El resto ocultos
+    const previewCertificates = isMobile
+        ? certificates.slice(3, 4) // Solo 1 en móvil
+        : certificates.slice(3, 6) // 3 en desktop
     const hasMoreCertificates = certificates.length > 3
 
     const toggleShowAll = () => {
@@ -131,9 +146,9 @@ export default function Certificados() {
                         ))}
                     </div>
 
-                    {/* Preview de los siguientes 3 - solo si no está expandido */}
+                    {/* Preview - 1 en móvil, 3 en desktop */}
                     {!showAll && previewCertificates.length > 0 && (
-                        <div className={styles.previewGrid}>
+                        <div className={`${styles.previewGrid} ${isMobile ? styles.mobilePreview : ""}`}>
                             {previewCertificates.map((cert, index) => (
                                 <div key={index + 3} className={`${styles.certificateCard} ${styles.previewCard}`}>
                                     <div className={styles.certificateImage}>

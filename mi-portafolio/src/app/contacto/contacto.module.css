@@ -4,8 +4,11 @@
 }
 
 .contactSection {
-    padding: 150px 0 100px;
+    padding: 20px 20px 20px;
+    margin-top: 110px;
+    margin-bottom: 60px;
     background-color: var(--background-color);
+    border-radius: 10px;
 }
 
 .container {
@@ -29,7 +32,8 @@
 .underline {
     height: 4px;
     width: 70px;
-    background-color: var(--primary-color);
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    border-radius: 2px;
     margin: 0 auto;
 }
 
