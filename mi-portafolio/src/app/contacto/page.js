@@ -3,10 +3,11 @@
 import { useState } from "react"
 import Navbar from "../../components/Navbar"
 import Footer from "../../components/Footer"
+import { useTheme } from "../../components/ThemeContext"
 import styles from "./contacto.module.css"
 
 export default function Contacto() {
-    const [theme, setTheme] = useState("light")
+    const { theme, toggleTheme } = useTheme()
     const [formData, setFormData] = useState({
         name: "",
         email: "",
@@ -15,12 +16,6 @@ export default function Contacto() {
     })
     const [isSubmitting, setIsSubmitting] = useState(false)
     const [submitMessage, setSubmitMessage] = useState(null)
-
-    const toggleTheme = () => {
-        const newTheme = theme === "light" ? "dark" : "light"
-        setTheme(newTheme)
-        document.body.className = newTheme
-    }
 
     const handleChange = (e) => {
         const { name, value } = e.target

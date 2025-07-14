@@ -157,6 +157,8 @@
 
 .certificateLink:hover {
     background-color: var(--accent-color);
+    box-shadow: 0 6px 20px rgba(192, 132, 252, 0.2);
+    color: white;
 }
 
 /* Botón de toggle */

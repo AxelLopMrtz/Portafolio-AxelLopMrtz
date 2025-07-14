@@ -4,7 +4,7 @@
   --secondary-color: #2ecc71;
   --accent-color: #c084fc;
   --text-color: #333;
-  --background-color: #f9f9f9;
+  --background-color: #f3f3f3;
   --card-background: #ffffff;
   --shadow-color: rgba(0, 0, 0, 0.2);
   --transition-speed: 0.3s;
@@ -149,7 +149,7 @@ a {
 }
 
 a:hover {
-  color: var(--accent-color);
+  color: var(--secondary-color);
 }
 
 section {
