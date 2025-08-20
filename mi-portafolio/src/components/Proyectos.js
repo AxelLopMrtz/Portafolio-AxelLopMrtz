@@ -1,41 +1,46 @@
+import Link from "next/link"
 import styles from "./Proyectos.module.css"
 
 export default function Proyectos() {
     const projects = [
         {
+            slug: "automatizacion-whatsapp",
             title: "Automatización de WhatsApp",
-            description: "Un proyecto que permite automatizar el envío de mensajes de WhatsApp a grupos en dispositivos móviles.",
+            description:
+                "Un proyecto que permite automatizar el envío de mensajes de WhatsApp a grupos en dispositivos móviles.",
             image: "images/proyectos/whatsapp-auto.png",
             tags: ["Python", "Appium", "ADB"],
-            demoLink: "#", // Cambiado a un enlace seguro
         },
         {
-            title: "Dashboard de Registros",
-            description: "Dashboard alimentado mediante registros de formularios, limpiados y procesados mediante scripts en python.",
-            image: "images/proyectos/dashboard-comites.png",
-            tags: ["PHP", "CSS", "JavaScript", "MySQL", "Python"],
-            demoLink: "#", // Cambiado a un enlace seguro
-        },
-        {
-            title: "WordPress informativo",
-            description: "Sitio web informativo desarrollado en WordPress, con un chatbot integrado para resolver dudas relacionadas al sitio.",
-            image: "images/proyectos/csp2430.png",
-            tags: ["WordPress", "CSS"],
-            demoLink: "#", // Cambiado a un enlace seguro
-        },
-        {
-            title: "NeoRadia - Prototipo plataforma de radiología",
-            description: "Prototipo de una plataforma de radiología, desarrollada en Hackathon TalentLand en el track de Salud Digna",
-            image: "images/proyectos/NeoRadia.png",
-            tags: ["ReactJS", "Amazon S3", "NodeJS"],
-            demoLink: "#", // Cambiado a un enlace seguro
-        },
-        {
+            slug: "dashboard-cancunfc",
             title: "Dashboard para el análisis financiero de Cancún FC",
             description: "Dashboard para el análisis financiero de un equipo de fútbol, Cancún FC.",
             image: "images/proyectos/dashboard-cancunfc.png",
             tags: ["ReactJS", "NodeJS", "Python", "MySQL", "ExpressJS", "Postman"],
-            demoLink: "#", // Cambiado a un enlace seguro
+        },
+        {
+            slug: "dashboard-registros",
+            title: "Dashboard de Registros",
+            description:
+                "Dashboard alimentado mediante registros de formularios, limpiados y procesados mediante scripts en python.",
+            image: "images/proyectos/dashboard-comites.png",
+            tags: ["PHP", "CSS", "JavaScript", "MySQL", "Python"],
+        },
+        {
+            slug: "wordpress-informativo",
+            title: "WordPress informativo",
+            description:
+                "Sitio web informativo desarrollado en WordPress, con un chatbot integrado para resolver dudas relacionadas al sitio.",
+            image: "images/proyectos/csp2430.png",
+            tags: ["WordPress", "CSS"],
+        },
+        {
+            slug: "neoradia-prototipo",
+            title: "NeoRadia - Prototipo plataforma de radiología",
+            description:
+                "Prototipo de una plataforma de radiología, desarrollada en Hackathon TalentLand en el track de Salud Digna",
+            image: "images/proyectos/NeoRadia.png",
+            tags: ["ReactJS", "Amazon S3", "NodeJS"],
         },
     ]
 
@@ -54,9 +59,23 @@ export default function Proyectos() {
                             <div className={styles.projectImage}>
                                 <img src={project.image || "/placeholder.svg"} alt={project.title} />
                                 <div className={styles.projectLinks}>
-                                    <a href={project.demoLink} target="_blank" rel="noopener noreferrer" className={styles.projectLink}>
-                                        Demo
-                                    </a>
+                                    <Link href={`/proyectos/${project.slug}`} className={styles.projectLink}>
+                                        Ver más
+                                        <svg
+                                            xmlns="http://www.w3.org/2000/svg"
+                                            width="16"
+                                            height="16"
+                                            viewBox="0 0 24 24"
+                                            fill="none"
+                                            stroke="currentColor"
+                                            strokeWidth="2"
+                                            strokeLinecap="round"
+                                            strokeLinejoin="round"
+                                        >
+                                            <path d="M7 17L17 7"></path>
+                                            <path d="M7 7h10v10"></path>
+                                        </svg>
+                                    </Link>
                                 </div>
                             </div>
                             <div className={styles.projectInfo}>

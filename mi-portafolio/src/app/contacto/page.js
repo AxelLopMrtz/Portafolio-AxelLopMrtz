@@ -4,6 +4,7 @@ import { useState } from "react"
 import Navbar from "../../components/Navbar"
 import Footer from "../../components/Footer"
 import { useTheme } from "../../components/ThemeContext"
+import emailjs from "@emailjs/browser"
 import styles from "./contacto.module.css"
 
 export default function Contacto() {
@@ -25,26 +26,49 @@ export default function Contacto() {
         }))
     }
 
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault()
         setIsSubmitting(true)
+        setSubmitMessage(null)
 
-        // Simulación de envío de formulario
-        setTimeout(() => {
-            setIsSubmitting(false)
+        try {
+            // Configuración de EmailJS
+            const templateParams = {
+                from_name: formData.name,
+                from_email: formData.email,
+                subject: formData.subject,
+                message: formData.message,
+                to_name: "Axel López", // Tu nombre
+            }
+
+            await emailjs.send(
+                "service_op8m53k",
+                "template_d5f729j",
+                templateParams,
+                "72cHIeECj_f50UP5o",
+            )
+
             setSubmitMessage({
                 type: "success",
                 text: "¡Mensaje enviado con éxito! Te responderé lo antes posible.",
             })
 
-            // Resetear el formulario después de enviar
+            // Resetear el formulario
             setFormData({
                 name: "",
                 email: "",
                 subject: "",
                 message: "",
             })
-        }, 2000)
+        } catch (error) {
+            console.error("Error al enviar el email:", error)
+            setSubmitMessage({
+                type: "error",
+                text: "Hubo un error al enviar el mensaje. Por favor, intenta de nuevo o contáctame directamente por email.",
+            })
+        } finally {
+            setIsSubmitting(false)
+        }
     }
 
     return (
@@ -128,18 +152,77 @@ export default function Contacto() {
                                     <p>Cancún, Quintana Roo, México</p>
                                 </div>
                             </div>
+
+                            <div className={styles.socialLinks}>
+                                <h3>Sígueme en:</h3>
+                                <div className={styles.socialIcons}>
+                                    <a href="https://github.com/tuusuario" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+                                        <svg
+                                            xmlns="http://www.w3.org/2000/svg"
+                                            width="24"
+                                            height="24"
+                                            viewBox="0 0 24 24"
+                                            fill="none"
+                                            stroke="currentColor"
+                                            strokeWidth="2"
+                                            strokeLinecap="round"
+                                            strokeLinejoin="round"
+                                        >
+                                            <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
+                                        </svg>
+                                    </a>
+                                    <a
+                                        href="https://linkedin.com/in/tuusuario"
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        aria-label="LinkedIn"
+                                    >
+                                        <svg
+                                            xmlns="http://www.w3.org/2000/svg"
+                                            width="24"
+                                            height="24"
+                                            viewBox="0 0 24 24"
+                                            fill="none"
+                                            stroke="currentColor"
+                                            strokeWidth="2"
+                                            strokeLinecap="round"
+                                            strokeLinejoin="round"
+                                        >
+                                            <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+                                            <rect x="2" y="9" width="4" height="12"></rect>
+                                            <circle cx="4" cy="4" r="2"></circle>
+                                        </svg>
+                                    </a>
+                                </div>
+                            </div>
                         </div>
 
                         <div className={styles.contactForm}>
                             <form onSubmit={handleSubmit}>
                                 <div className={styles.formGroup}>
                                     <label htmlFor="name">Nombre</label>
-                                    <input type="text" id="name" name="name" value={formData.name} onChange={handleChange} required />
+                                    <input
+                                        type="text"
+                                        id="name"
+                                        name="name"
+                                        value={formData.name}
+                                        onChange={handleChange}
+                                        required
+                                        disabled={isSubmitting}
+                                    />
                                 </div>
 
                                 <div className={styles.formGroup}>
                                     <label htmlFor="email">Email</label>
-                                    <input type="email" id="email" name="email" value={formData.email} onChange={handleChange} required />
+                                    <input
+                                        type="email"
+                                        id="email"
+                                        name="email"
+                                        value={formData.email}
+                                        onChange={handleChange}
+                                        required
+                                        disabled={isSubmitting}
+                                    />
                                 </div>
 
                                 <div className={styles.formGroup}>
@@ -151,6 +234,7 @@ export default function Contacto() {
                                         value={formData.subject}
                                         onChange={handleChange}
                                         required
+                                        disabled={isSubmitting}
                                     />
                                 </div>
 
@@ -163,6 +247,7 @@ export default function Contacto() {
                                         value={formData.message}
                                         onChange={handleChange}
                                         required
+                                        disabled={isSubmitting}
                                     ></textarea>
                                 </div>
 
