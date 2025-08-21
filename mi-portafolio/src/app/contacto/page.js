@@ -197,7 +197,7 @@ export default function Contacto() {
                 "service_op8m53k",
                 "template_d5f729j",
                 templateParams,
-                "72cHIeECj_f50UP5o", S
+                "72cHIeECj_f50UP5o",
             )
 
             setSubmitMessage({
