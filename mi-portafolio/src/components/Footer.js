@@ -1,14 +1,18 @@
 import Link from "next/link"
+import { usePathname } from "next/navigation"
 import styles from "./Footer.module.css"
 
 export default function Footer() {
+    const pathname = usePathname()
+    const isHomePage = pathname === "/"
+
     return (
         <footer className={styles.footer}>
             <div className={styles.container}>
                 <div className={styles.content}>
                     <div className={styles.logo}>
                         <Link href="/">
-                            <span className={styles.highlight}>Axel</span>López
+                            <span className={styles.highlight}>Mi</span>Portafolio
                         </Link>
                     </div>
 
@@ -52,18 +56,12 @@ export default function Footer() {
                     <div className={styles.linkGroup}>
                         <h3>Navegación</h3>
                         <ul>
+                            <li>{isHomePage ? <a href="#inicio">Inicio</a> : <Link href="/#inicio">Inicio</Link>}</li>
+                            <li>{isHomePage ? <a href="#sobre-mi">Sobre Mí</a> : <Link href="/#sobre-mi">Sobre Mí</Link>}</li>
                             <li>
-                                <a href="#inicio">Inicio</a>
+                                {isHomePage ? <a href="#tecnologias">Tecnologías</a> : <Link href="/#tecnologias">Tecnologías</Link>}
                             </li>
-                            <li>
-                                <a href="#sobre-mi">Sobre Mí</a>
-                            </li>
-                            <li>
-                                <a href="#tecnologias">Tecnologías</a>
-                            </li>
-                            <li>
-                                <a href="#proyectos">Proyectos</a>
-                            </li>
+                            <li>{isHomePage ? <a href="#proyectos">Proyectos</a> : <Link href="/#proyectos">Proyectos</Link>}</li>
                         </ul>
                     </div>
 
@@ -71,10 +69,14 @@ export default function Footer() {
                         <h3>Más</h3>
                         <ul>
                             <li>
-                                <a href="#experiencia">Experiencia</a>
+                                {isHomePage ? <a href="#experiencia">Experiencia</a> : <Link href="/#experiencia">Experiencia</Link>}
                             </li>
                             <li>
-                                <a href="#certificados">Certificados</a>
+                                {isHomePage ? (
+                                    <a href="#certificados">Certificados</a>
+                                ) : (
+                                    <Link href="/#certificados">Certificados</Link>
+                                )}
                             </li>
                             <li>
                                 <Link href="/contacto">Contacto</Link>
