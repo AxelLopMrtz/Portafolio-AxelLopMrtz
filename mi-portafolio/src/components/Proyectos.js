@@ -58,7 +58,7 @@ export default function Proyectos() {
                         <div key={index} className={styles.projectCard}>
                             <div className={styles.projectImage}>
                                 <img src={project.image || "/placeholder.svg"} alt={project.title} />
-                                <div className={styles.projectLinks}>
+                                {/* <div className={styles.projectLinks}>
                                     <Link href={`/proyectos/${project.slug}`} className={styles.projectLink}>
                                         Ver más
                                         <svg
@@ -76,7 +76,7 @@ export default function Proyectos() {
                                             <path d="M7 7h10v10"></path>
                                         </svg>
                                     </Link>
-                                </div>
+                                </div> */}
                             </div>
                             <div className={styles.projectInfo}>
                                 <h3 className={styles.projectTitle}>{project.title}</h3>
