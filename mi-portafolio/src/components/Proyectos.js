@@ -42,6 +42,14 @@ export default function Proyectos() {
             image: "images/proyectos/NeoRadia.png",
             tags: ["ReactJS", "Amazon S3", "NodeJS"],
         },
+        {
+            slug: "reportes-tlalpan",
+            title: "Plataforma de reportes - Alcaldía Tlalpan",
+            description:
+                "Plataforma web para la gestión de reportes ciudadanos en la Alcaldía Tlalpan de datos recopilados a través de un chatbot con n8n.",
+            image: "images/proyectos/reportes-tlalpan.png",
+            tags: ["ReactJS", "n8n", "NodeJS", "PHP", "MySQL"],
+        },
     ]
 
     return (
