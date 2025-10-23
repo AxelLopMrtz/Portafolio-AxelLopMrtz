@@ -12,7 +12,6 @@ export default function Sobremi() {
                 <div className={styles.content}>
                     <div className={styles.imageContainer}>
                         <div className={styles.image}>
-                            {/* Aquí puedes agregar tu foto */}
                             <img src="/images/sobremi.jpg" alt="Mi foto personal" className={styles.profileImage} />
                         </div>
                     </div>
@@ -22,34 +21,23 @@ export default function Sobremi() {
                             ¡Hola! Soy <span className={styles.highlight}>Axel López</span>
                         </h3>
                         <p>
-                            Tengo 22 años y soy recién egresado de la carrera de Ingeniería en Datos e Inteligencia Organizacional.
+                            Soy Ingeniero en Datos con experiencia en desarrollo web y análisis de datos. He trabajado en la creación de
+                            plataformas interactivas, chatbots y dashboards utilizando tecnologías como React.js, Node.js, Python y SQL.
                         </p>
                         <p>
-                            Tengo experiencia en desarrollo web, especialmente con tecnologías como React y Node.js. Además he trabajado
-                            en proyectos de análisis de datos y visualización, lo que me ha permitido combinar mis habilidades técnicas
-                            con mi pasión por resolver problemas.
+                            Durante mi experiencia profesional he desarrollado soluciones integrales que combinan frontend, backend y manejo
+                            de datos, además de participar en proyectos de automatización y análisis con herramientas como Flask y Selenium.
                         </p>
                         <p>
-                            Me interesa seguir aprendiendo y creciendo en el campo del desarrollo web y el análisis de datos. Conociendo
-                            nuevas tecnologías y herramientas que me ayuden a mejorar mis habilidades y aportar valor a los proyectos en
-                            los que trabajo.
+                            También he participado en eventos tecnológicos como el Talent Land Hackathon 2025, donde fortalecí mis habilidades
+                            en trabajo en equipo y resolución de problemas.
                         </p>
 
-                        {/* <div className={styles.details}>
-                            <div className={styles.detail}>
-                                <span className={styles.label}>Ubicación:</span>
-                                <span className={styles.value}>Tu Ciudad, País</span>
-                            </div>
-                            <div className={styles.detail}>
-                                <span className={styles.label}>Disponibilidad:</span>
-                                <span className={styles.value}>Disponible para proyectos</span>
-                            </div>
-                        </div> */}
-
-                        <a href="/Docs/cv.pdf" download className={styles.downloadBtn}>
+                        <a href="/Docs/cv_axel_lopez.pdf" download className={styles.downloadBtn}>
                             Descargar CV
                         </a>
                     </div>
+
                 </div>
             </div>
         </section>

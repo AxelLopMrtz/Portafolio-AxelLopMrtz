@@ -8,12 +8,12 @@ export default function Hero() {
                     <h1 className={styles.title}>
                         Hola, soy <span className={styles.highlight}>Axel López</span>
                     </h1>
-                    <h2 className={styles.subtitle}>Ingeniero en Datos</h2>
+                    <h2 className={styles.subtitle}>Ingeniero en Datos | Desarrollador web</h2>
                     <p className={styles.description}>
-                        Soy recién egresado de la carrera de Ingeniería en Datos. <br />
-                        Tengo experiencia trabajando con tecnologías de desarrollo web
-                        como React y Node.js, ademas de conocimientos en bases de datos y
-                        análisis de datos.
+                        Ingeniero en Datos con experiencia en desarrollo web utilizando
+                        tecnologias como React.js y Node. Me gusta combinar la lógica del
+                        análisis con el diseño de interfaces modernas para ofrecer soluciones
+                        funcionales y atractivas.
                     </p>
                     <div className={styles.buttons}>
                         <a href="#proyectos" className={`${styles.btn} ${styles.primary}`}>

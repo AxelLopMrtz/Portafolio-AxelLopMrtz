@@ -14,7 +14,13 @@ import {
     SiWordpress,
     SiHtml5,
     SiNextdotjs,
+    SiN8N,
+    SiFlask,
+    SiSelenium,
 } from "react-icons/si"
+import {
+    FaGitAlt
+} from "react-icons/fa"
 
 // Importamos Iconify para Power BI
 import { Icon } from "@iconify/react"
@@ -40,15 +46,19 @@ export default function Tecnologias() {
 
     const technologies = [
         { name: "Python", icon: SiPython, color: "#3776AB", type: "react-icon" },
+        { name: "JavaScript", icon: SiJavascript, color: "#F7DF1E", type: "react-icon" },
+        { name: "PHP", icon: SiPhp, color: "#777BB4", type: "react-icon" },
         { name: "SQL", icon: SiMysql, color: "#4479A1", type: "react-icon" },
         { name: "HTML", icon: SiHtml5, color: "#E34F26", type: "react-icon" },
         { name: "CSS", icon: SiCss3, color: "#1572B6", type: "react-icon" },
-        { name: "JavaScript", icon: SiJavascript, color: "#F7DF1E", type: "react-icon" },
         { name: "ReactJS", icon: SiReact, color: "#61DAFB", type: "react-icon" },
-        { name: "Next.js", icon: SiNextdotjs, color: isDark ? "#FFFFFF" : "#000000", type: "react-icon", darkMode: true },
+        { name: "NextJS", icon: SiNextdotjs, color: isDark ? "#FFFFFF" : "#000000", type: "react-icon", darkMode: true },
         { name: "NodeJS", icon: SiNodedotjs, color: "#339933", type: "react-icon" },
-        { name: "PHP", icon: SiPhp, color: "#777BB4", type: "react-icon" },
+        { name: "Flask", icon: SiFlask, color: "#000000", type: "react-icon" },
         { name: "Power BI", icon: "logos:microsoft-power-bi", color: "#F2C811", type: "iconify" },
+        { name: "Selenium", icon: SiSelenium, color: "#43B02A", type: "react-icon" },
+        { name: "n8n", icon: SiN8N, color: isDark ? "#FFFFFF" : "#eb5175", type: "react-icon", darkMode: true },
+        { name: "Git", icon: FaGitAlt, color: "#F05032", type: "react-icon" },
         { name: "GitHub", icon: SiGithub, color: isDark ? "#FFFFFF" : "#181717", type: "react-icon", darkMode: true },
         { name: "WordPress", icon: SiWordpress, color: "#21759B", type: "react-icon" },
     ]
