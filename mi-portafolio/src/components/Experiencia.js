@@ -5,7 +5,7 @@ export default function Experiencia() {
         {
             position: "Desarrollador Full Stack",
             company: "FarFay Group",
-            period: "Agosto 2022 - Presente",
+            period: "Agosto 2024 - Presente",
             description:
                 "Desarrollo de aplicaciones web, automatización de procesos y soluciones digitales personalizadas.",
             achievements: [
